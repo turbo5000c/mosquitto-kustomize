@@ -12,5 +12,10 @@
       "datasourceTemplate": "docker",
       "versioningTemplate": "docker"
     }
-  ]
+  ],
+  "schedule": ["every 6 hours"],
+  "automerge": true,
+  "automergeType": "branch",
+  "automergeStrategy": "auto",
+  "requiredStatusChecks": null
 }
