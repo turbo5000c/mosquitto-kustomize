@@ -13,7 +13,7 @@
       "versioningTemplate": "docker"
     }
   ],
-  "schedule": ["every 6 hours on every day"],
+  "schedule": ["0 */6 * * *"],
   "automerge": true,
   "automergeType": "branch",
   "automergeStrategy": "auto",
