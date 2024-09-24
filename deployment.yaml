@@ -11,6 +11,11 @@ spec:
     matchLabels:
       app.kubernetes.io/name: mosquitto
       app.kubernetes.io/instance: mosquitto
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
   template:
     metadata:
       labels:
