@@ -48,9 +48,9 @@ spec:
               subPath: America/New_York
               readOnly: true
             - name: mosquitto-pvc
-              mountPath: /backup
-            - name: mosquitto-data
               mountPath: /mosquitto/
+#            - name: mosquitto-data
+#              mountPath: /mosquitto/
       volumes:
         - name: zoneinfo
           hostPath:
@@ -61,6 +61,6 @@ spec:
         - name: mosquitto-pvc
           persistentVolumeClaim:
             claimName: mosquitto-pvc
-        - name: mosquitto-data
-          hostPath:
-            path: /home/tpearson/hass/k8s-mosquitto
+ #       - name: mosquitto-data
+ #         hostPath:
+ #           path: /home/tpearson/hass/k8s-mosquitto
