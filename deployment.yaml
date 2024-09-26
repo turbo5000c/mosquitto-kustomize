@@ -47,20 +47,20 @@ spec:
               mountPath: /etc/localtime
               subPath: America/New_York
               readOnly: true
-         #   - name: config-volume
-         #     mountPath: /mosquitto/config
+            - name: mosquitto-pvc
+              mountPath: /backup
             - name: mosquitto-data
               mountPath: /mosquitto/
       volumes:
         - name: zoneinfo
           hostPath:
             path: /usr/share/zoneinfo
-        - name: config-volume
+        - name: mosquitto-pvc
           configMap:
             name: mosquitto
-       # - name: mosquitto-data
-       #   persistentVolumeClaim:
-       #     claimName: mosquitto-data
+        - name: mosquitto-data
+          persistentVolumeClaim:
+            claimName: mosquitto-data
         - name: mosquitto-data
           hostPath:
             path: /home/tpearson/hass/k8s-mosquitto
