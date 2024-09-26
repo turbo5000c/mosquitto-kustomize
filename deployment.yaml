@@ -55,12 +55,12 @@ spec:
         - name: zoneinfo
           hostPath:
             path: /usr/share/zoneinfo
+#        - name: mosquitto-pvc
+#          configMap:
+#            name: mosquitto
         - name: mosquitto-pvc
-          configMap:
-            name: mosquitto
-        - name: mosquitto-data
           persistentVolumeClaim:
-            claimName: mosquitto-data
+            claimName: mosquitto-pvc
         - name: mosquitto-data
           hostPath:
             path: /home/tpearson/hass/k8s-mosquitto
